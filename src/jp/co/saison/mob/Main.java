@@ -19,7 +19,8 @@ public class Main {
             BufferedReader br = new BufferedReader(fr);
             String text;
             while ((text = br.readLine()) != null) {
-                System.out.println(text);
+                String dy = text.substring(0, 3);
+                System.out.println(dy);
             }
         } catch (IOException e) {
             e.printStackTrace();
