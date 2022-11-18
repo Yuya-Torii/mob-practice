@@ -1,8 +1,8 @@
 package jp.co.saison.mob;
 
 public class WeatherRecord {
-  String dy;
-  String mxt;
-  String mnt;
+  int dy;
+  int mxt;
+  int mnt;
 
 }

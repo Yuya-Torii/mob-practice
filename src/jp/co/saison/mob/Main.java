@@ -25,8 +25,11 @@ public class Main {
                     continue;
                 }
                 String dy = text.substring(0, 4);
-                String mxt = text.substring(4,8);
+                String mxt = text.substring(4,9);
+                String mnt = text.substring(9,14);
                 System.out.println(dy);
+                System.out.println(mxt);
+                System.out.println(mnt);
             }
         } catch (IOException e) {
             e.printStackTrace();
