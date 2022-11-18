@@ -18,7 +18,6 @@ public class Main {
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String text;
-            WeatherRecord weatherRecord = new WeatherRecord();
             final List<WeatherRecord> list = new ArrayList<>();
             br.readLine();
             br.readLine();
@@ -35,6 +34,7 @@ public class Main {
                 final int intDay = Integer.parseInt(dy);
                 final int intMxt = Integer.parseInt(mxt);
                 final int intMnt = Integer.parseInt(mnt);
+                WeatherRecord weatherRecord = new WeatherRecord(intDay, intMxt, intMnt);
 
                 System.out.println(intDay);
 //                System.out.println(mxt);
