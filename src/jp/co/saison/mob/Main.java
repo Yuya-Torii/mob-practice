@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -18,7 +20,7 @@ public class Main {
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String text;
-            final List<WeatherRecord> list = new ArrayList<>();
+            final Map<Integer, Integer> map = new HashMap<>();
             br.readLine();
             br.readLine();
             while ((text = br.readLine()) != null) {
@@ -35,6 +37,7 @@ public class Main {
                 final int intMxt = Integer.parseInt(mxt);
                 final int intMnt = Integer.parseInt(mnt);
                 WeatherRecord weatherRecord = new WeatherRecord(intDay, intMxt, intMnt);
+                map.put(intDay, weatherRecord.getTemperatureDiff());
 
                 System.out.println(intDay);
 //                System.out.println(mxt);
