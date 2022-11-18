@@ -20,16 +20,25 @@ public class Main {
             String text;
             WeatherRecord weatherRecord = new WeatherRecord();
             final List<WeatherRecord> list = new ArrayList<>();
+            br.readLine();
+            br.readLine();
             while ((text = br.readLine()) != null) {
-                if ("".equals(text)) {
+//                if ("".equals(text)) {
+//                    continue;
+//                }
+                if (text.contains("mo")) {
                     continue;
                 }
-                String dy = text.substring(0, 4);
-                String mxt = text.substring(4,9);
-                String mnt = text.substring(9,14);
-                System.out.println(dy);
-                System.out.println(mxt);
-                System.out.println(mnt);
+                String dy = text.substring(0, 4).replace(" ","");
+                String mxt = text.substring(4,9).replace(" ","");
+                String mnt = text.substring(9,14).replace(" ","");
+                final int intDay = Integer.parseInt(dy);
+                final int intMxt = Integer.parseInt(mxt);
+                final int intMnt = Integer.parseInt(mnt);
+
+                System.out.println(intDay);
+//                System.out.println(mxt);
+//                System.out.println(mnt);
             }
         } catch (IOException e) {
             e.printStackTrace();

@@ -4,5 +4,4 @@ public class WeatherRecord {
   int dy;
   int mxt;
   int mnt;
-
 }
