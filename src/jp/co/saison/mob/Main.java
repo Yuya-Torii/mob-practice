@@ -18,8 +18,12 @@ public class Main {
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String text;
+            WeatherRecord weatherRecord = new WeatherRecord();
             while ((text = br.readLine()) != null) {
-                String dy = text.substring(0, 3);
+                if ("".equals(text)) {
+                    continue;
+                }
+                String dy = text.substring(0, 4);
                 System.out.println(dy);
             }
         } catch (IOException e) {
