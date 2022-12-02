@@ -10,11 +10,15 @@ public class FootballMain {
 		File file = new File("resource/football.dat");
 		try (final FileReader fileReader = new FileReader(file);
 		     final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				String f = line.substring(43, 45);
+				String a = line.substring(50, 52);
 
-			final String line = bufferedReader.readLine();
-			String f = line.substring(43, 45);
-			String a = line.substring(50, 52);
-			System.out.println(a);
+				f.matches("");
+			}
+
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
