@@ -14,11 +14,17 @@ public class FootballMain {
 			while ((line = bufferedReader.readLine()) != null) {
 				String f = line.substring(43, 45);
 				String a = line.substring(50, 52);
+				String team = line.substring(7, 23);
 
-				f.matches("");
+				System.out.println(f);
+				if (!f.matches("\\d+?")) {
+					continue;
+				}
+				// どうする？
+				final int goalFor = Integer.parseInt(f);
+				final int goalAgainst = Integer.parseInt(a);
+
 			}
-
-
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
