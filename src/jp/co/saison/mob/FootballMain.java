@@ -1,13 +1,20 @@
 package jp.co.saison.mob;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class FootballMain {
 	public static void main(String[] args) {
 		File file = new File("resource/football.dat");
-		try(final FileReader fileReader = new FileReader(file);
-			final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+		try (final FileReader fileReader = new FileReader(file);
+		     final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
 			final String line = bufferedReader.readLine();
+			String f = line.substring(43, 45);
+			String a = line.substring(50, 52);
+			System.out.println(a);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
