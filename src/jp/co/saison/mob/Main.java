@@ -23,7 +23,6 @@ public class Main {
             String text;
             final Map<Integer, Integer> map = new HashMap<>();
             br.readLine();
-            br.readLine();
 
             int min = Integer.MAX_VALUE;
             int minDay = 0;
@@ -31,30 +30,34 @@ public class Main {
 //                if ("".equals(text)) {
 //                    continue;
 //                }
-                if (text.contains("mo")) {
+                if (text.contains("--")) {
                     continue;
                 }
-                String team = text.substring(7, 7).replace(" ", "").replace("*", "");
-                String mxt = text.substring(4, 9).replace(" ", "").replace("*", "");
-                String mnt = text.substring(9, 14).replace(" ", "").replace("*", "");
-                final int intDay = Integer.parseInt(dy);
-                final int intMxt = Integer.parseInt(mxt);
-                final int intMnt = Integer.parseInt(mnt);
-                WeatherRecord weatherRecord = new WeatherRecord(intDay, intMxt, intMnt);
-                final int temperatureDiff = weatherRecord.getTemperatureDiff();
-                if (min > temperatureDiff) {
-                    min = temperatureDiff;
-                    minDay = intDay;
-                }
+                String team = text.substring(7, 22).replace(" ", "");
+                //System.out.println(team);
+                String f = text.substring(43, 47).trim();
+                String a = text.substring(50, 54).trim();
+                //System.out.println(f);
+                //System.out.println(a);
+                //String mnt = text.substring(9, 14).replace(" ", "").replace("*", "");
+                final int intF = Integer.parseInt(f);
+                final int intA = Integer.parseInt(a);
+                System.out.println(intA);
+                //WeatherRecord weatherRecord = new WeatherRecord(intDay, intMxt, intMnt);
+                //final int temperatureDiff = weatherRecord.getTemperatureDiff();
+                //if (min > temperatureDiff) {
+                 //   min = temperatureDiff;
+                  //  minDay = intDay;
+                //}
 //                map.put(intDay, weatherRecord.getTemperatureDiff());
 
-                System.out.println(intDay);
+                //System.out.println(intDay);
 //                System.out.println(mxt);
 //                System.out.println(mnt);
             }
             // mapのvalueを比較
-            System.out.println("minimum diff day is " + minDay);
-            System.out.println("minimum temp diff is " + min);
+            //System.out.println("minimum diff day is " + minDay);
+            //System.out.println("minimum temp diff is " + min);
 //            final Integer min = Collections.min(map.values());
 
         } catch (IOException e) {
