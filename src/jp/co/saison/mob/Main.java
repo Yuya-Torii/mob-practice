@@ -25,7 +25,7 @@ public class Main {
             br.readLine();
 
             int min = Integer.MAX_VALUE;
-            int minDay = 0;
+            List<String>  minTeam = new ArrayList<>();
             while ((text = br.readLine()) != null) {
 //                if ("".equals(text)) {
 //                    continue;
@@ -42,13 +42,15 @@ public class Main {
                 //String mnt = text.substring(9, 14).replace(" ", "").replace("*", "");
                 final int intF = Integer.parseInt(f);
                 final int intA = Integer.parseInt(a);
-                System.out.println(intA);
+//                System.out.println(intA);
+                int abs = Math.abs(intF - intA);
                 //WeatherRecord weatherRecord = new WeatherRecord(intDay, intMxt, intMnt);
                 //final int temperatureDiff = weatherRecord.getTemperatureDiff();
-                //if (min > temperatureDiff) {
-                 //   min = temperatureDiff;
-                  //  minDay = intDay;
-                //}
+
+                if (min > abs) {
+                    min = abs;
+                    minTeam = team;
+                }
 //                map.put(intDay, weatherRecord.getTemperatureDiff());
 
                 //System.out.println(intDay);
@@ -59,6 +61,7 @@ public class Main {
             //System.out.println("minimum diff day is " + minDay);
             //System.out.println("minimum temp diff is " + min);
 //            final Integer min = Collections.min(map.values());
+            System.out.println(minTeam);
 
         } catch (IOException e) {
             e.printStackTrace();
