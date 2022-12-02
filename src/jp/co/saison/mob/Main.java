@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        File file = new File("resource/weather.dat");
+        File file = new File("resource/football.dat");
         try {
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
@@ -34,7 +34,7 @@ public class Main {
                 if (text.contains("mo")) {
                     continue;
                 }
-                String dy = text.substring(0, 4).replace(" ", "").replace("*", "");
+                String team = text.substring(7, 7).replace(" ", "").replace("*", "");
                 String mxt = text.substring(4, 9).replace(" ", "").replace("*", "");
                 String mnt = text.substring(9, 14).replace(" ", "").replace("*", "");
                 final int intDay = Integer.parseInt(dy);
