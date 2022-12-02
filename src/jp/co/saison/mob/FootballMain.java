@@ -4,10 +4,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FootballMain {
 	public static void main(String[] args) {
 		File file = new File("resource/football.dat");
+		Map<String, Integer> map = new HashMap<>();
 		try (final FileReader fileReader = new FileReader(file);
 		     final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 			String line;
@@ -23,7 +26,9 @@ public class FootballMain {
 				// どうする？
 				final int goalFor = Integer.parseInt(f);
 				final int goalAgainst = Integer.parseInt(a);
-
+				final String teamName = team.trim();
+				final int diff = Math.abs(goalFor - goalAgainst);
+				map.put(teamName, diff);
 			}
 		} catch (IOException e) {
 			throw new RuntimeException(e);
