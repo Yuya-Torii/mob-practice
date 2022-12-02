@@ -49,7 +49,10 @@ public class Main {
 
                 if (min > abs) {
                     min = abs;
-                    minTeam = team;
+                    minTeam.clear();
+                    minTeam.add(team);
+                } else if(min == abs) {
+                    minTeam.add(team);
                 }
 //                map.put(intDay, weatherRecord.getTemperatureDiff());
 
