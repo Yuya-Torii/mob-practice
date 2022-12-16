@@ -11,19 +11,22 @@ public class Kata04Main {
         String filename = args[0];
         String parserType = args[1];
         final File file = new File(filename);
-        try {
-            final FileReader fileReader = new FileReader(file);
-            final BufferedReader bufferedReader = new BufferedReader(fileReader);
-            bufferedReader.readLine();
-
-            ArrayList<FootballRecord> records = new ArrayList<>();
+        try(final FileReader fileReader = new FileReader(file);
+            final BufferedReader bufferedReader = new BufferedReader(fileReader);) {
             String text;
-
-        try {
+            ArrayList<KataRecord> kataRecords = new ArrayList<>();
             KataParser parser = KataParserFactory.createParser(parserType);
+            while ((text = bufferedReader.readLine()) != null) {
+                if (parser.setRecord(text) != null) {
+                    kataRecords.add(parser.setRecord(text));
+                }
+            }
+
+
+
 //            String result = parser.getRecord(filename);
             System.out.println(result);
-        } catch (Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }
