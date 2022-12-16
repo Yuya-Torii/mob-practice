@@ -20,4 +20,9 @@ public class FootballRecord implements KataRecord{
     public String toString() {
         return name;
     }
+
+    @Override
+    public int getDiff() {
+        return Math.abs(forGoal - againstGoal);
+    }
 }

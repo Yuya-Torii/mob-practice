@@ -8,7 +8,7 @@ public class Kata04Main {
 
         try {
             KataParser parser = KataParserFactory.createParser(parserType);
-            String result = parser.getResult(filename);
+//            String result = parser.getRecord(filename);
             System.out.println(result);
         } catch (Exception e) {
             e.printStackTrace();

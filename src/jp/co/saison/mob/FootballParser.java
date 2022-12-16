@@ -2,7 +2,7 @@ package jp.co.saison.mob;
 
 public class FootballParser implements KataParser {
     @Override
-    public String getResult(String filename) {
+    public KataRecord getRecord(String text) {
         return null;
     }
 }

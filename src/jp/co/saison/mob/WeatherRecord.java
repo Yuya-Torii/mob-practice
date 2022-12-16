@@ -15,4 +15,8 @@ public class WeatherRecord implements KataRecord{
     return this.mxt - this.mnt;
   }
 
+  @Override
+  public int getDiff() {
+    return this.mxt - this.mnt;
+  }
 }
