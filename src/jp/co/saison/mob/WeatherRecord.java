@@ -16,6 +16,11 @@ public class WeatherRecord implements KataRecord{
   }
 
   @Override
+  public String getDisplayName() {
+    return String.valueOf(dy);
+  }
+
+  @Override
   public int getDiff() {
     return this.mxt - this.mnt;
   }

@@ -17,7 +17,7 @@ public class FootballRecord implements KataRecord{
     }
 
     @Override
-    public String toString() {
+    public String getDisplayName() {
         return name;
     }
 

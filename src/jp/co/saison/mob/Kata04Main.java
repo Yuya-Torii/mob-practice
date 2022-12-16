@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Kata04Main {
 
@@ -22,10 +23,13 @@ public class Kata04Main {
                 }
             }
 
+            KataRecord minRecord = kataRecords.stream()
+					.min(Comparator.comparing(KataRecord::getDiff))
+					.orElseThrow(NullPointerException::new);
 
+            System.out.println(minRecord.getDisplayName());
 
 //            String result = parser.getRecord(filename);
-            System.out.println(result);
         }catch (Exception e) {
             e.printStackTrace();
         }
