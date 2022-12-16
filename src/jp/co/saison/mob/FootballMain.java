@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FootballMain {
 	public static void main(String[] args) {
@@ -30,6 +29,7 @@ public class FootballMain {
 				final int diff = Math.abs(goalFor - goalAgainst);
 				map.put(teamName, diff);
 			}
+//			Collections.sort(Arrays.asList(map.values().toArray()), Integer.compare());
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
