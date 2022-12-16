@@ -1,6 +1,6 @@
 package jp.co.saison.mob;
 
-public class WeatherRecord {
+public class WeatherRecord implements KataRecord{
   private int dy;
   private int mxt;
   private int mnt;

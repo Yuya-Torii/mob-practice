@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class WeatherParser implements KataParser {
     @Override
-    public String getResult(String filename) {
+    public WeatherRecord getResult(String filename) {
         File file = new File(filename);
         try {
             FileReader fr = new FileReader(file);

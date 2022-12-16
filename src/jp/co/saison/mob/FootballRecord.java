@@ -1,6 +1,6 @@
 package jp.co.saison.mob;
 
-public class FootballRecord {
+public class FootballRecord implements KataRecord{
 
     private final String name;
     private final int forGoal;
