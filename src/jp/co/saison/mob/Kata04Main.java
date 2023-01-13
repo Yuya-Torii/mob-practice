@@ -12,8 +12,8 @@ public class Kata04Main {
         String filename = args[0];
         String parserType = args[1];
         final File file = new File(filename);
-        try(final FileReader fileReader = new FileReader(file);
-            final BufferedReader bufferedReader = new BufferedReader(fileReader);) {
+        try (final FileReader fileReader = new FileReader(file);
+             final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             String text;
             ArrayList<KataRecord> kataRecords = new ArrayList<>();
             KataParser parser = KataParserFactory.createParser(parserType);
@@ -24,13 +24,13 @@ public class Kata04Main {
             }
 
             KataRecord minRecord = kataRecords.stream()
-					.min(Comparator.comparing(KataRecord::getDiff))
-					.orElseThrow(NullPointerException::new);
+                    .min(Comparator.comparing(KataRecord::getDiff))
+                    .orElseThrow(NullPointerException::new);
 
             System.out.println(minRecord.getDisplayName());
 
 //            String result = parser.getRecord(filename);
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

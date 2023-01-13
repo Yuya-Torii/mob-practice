@@ -1,9 +1,9 @@
 package jp.co.saison.mob;
 
 public class WeatherRecord implements KataRecord{
-  private int dy;
-  private int mxt;
-  private int mnt;
+  private final int dy;
+  private final int mxt;
+  private final int mnt;
 
   public WeatherRecord(int dy, int mxt, int mnt) {
     this.dy = dy;

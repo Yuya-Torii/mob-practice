@@ -10,7 +10,6 @@ public class FootballParser implements KataParser {
         String forGoal = text.substring(43, 45);
         String againstGoal = text.substring(50, 52);
 
-        FootballRecord footballRecord = new FootballRecord(name, forGoal, againstGoal);
-        return footballRecord;
+        return new FootballRecord(name, forGoal, againstGoal);
     }
 }
