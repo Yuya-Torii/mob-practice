@@ -1,6 +1,11 @@
 package jp.co.saison.mob;
 
-import static jp.co.saison.mob.FootballFormat.*;
+import static jp.co.saison.mob.FootballFormat.AGAINST_GOAL_END;
+import static jp.co.saison.mob.FootballFormat.AGAINST_GOAL_START;
+import static jp.co.saison.mob.FootballFormat.FOR_GOAL_END;
+import static jp.co.saison.mob.FootballFormat.FOR_GOAL_START;
+import static jp.co.saison.mob.FootballFormat.NAME_END;
+import static jp.co.saison.mob.FootballFormat.NAME_START;
 
 public class FootballParser implements KataParser {
     @Override
@@ -12,7 +17,6 @@ public class FootballParser implements KataParser {
         String forGoal = text.substring(FOR_GOAL_START, FOR_GOAL_END);
         String againstGoal = text.substring(AGAINST_GOAL_START, AGAINST_GOAL_END);
 
-        FootballRecord footballRecord = new FootballRecord(name, forGoal, againstGoal);
-        return footballRecord;
+        return new FootballRecord(name, forGoal, againstGoal);
     }
 }
