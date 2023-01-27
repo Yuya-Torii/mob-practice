@@ -22,6 +22,10 @@ public class Parser {
         for (Column column : columnSet) {
             int endPosition = column.getStartPosition() + column.getLength();
             final String rawText = text.substring(column.getStartPosition(), endPosition);
+			ColumnType columnType = column.getType();
+			switch (columnType) {
+				case Text:
+			}
         }
 
         return new Record();
