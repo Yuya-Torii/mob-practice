@@ -27,7 +27,7 @@ public class Kata04Main {
                     .min(Comparator.comparing(KataRecord::getDiff))
                     .orElseThrow(NullPointerException::new);
 
-            System.out.println(minRecord.getDisplayName());
+			System.out.println(minRecord.getDisplayName());
 
 //            String result = parser.getRecord(filename);
         } catch (Exception e) {
