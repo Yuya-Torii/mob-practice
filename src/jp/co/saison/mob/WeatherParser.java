@@ -1,12 +1,5 @@
 package jp.co.saison.mob;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 public class WeatherParser implements KataParser {
     @Override
     public WeatherRecord setRecord(String text) {
@@ -22,7 +15,7 @@ public class WeatherParser implements KataParser {
         final int intDay = Integer.parseInt(dy);
         final int intMxt = Integer.parseInt(mxt);
         final int intMnt = Integer.parseInt(mnt);
-        WeatherRecord weatherRecord = new WeatherRecord(intDay, intMxt, intMnt);
-        return weatherRecord;
+
+        return new WeatherRecord(intDay, intMxt, intMnt);
     }
 }
