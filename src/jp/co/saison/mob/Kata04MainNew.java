@@ -40,13 +40,17 @@ public class Kata04MainNew {
                 records.add(parser.parse(text));
             }
 
-			// records.stream().min(Comparator.comparing(r -> ((BigDecimal)r.items.get("MxT")).subtract(r.items.get("MnT")))
+            final Record minRecord = records.stream()
+                    .min(Comparator.comparing(r -> ((BigDecimal) r.items.get("MxT")).subtract(((BigDecimal) r.items.get("MnT")))))
+                    .orElseThrow(NullPointerException::new);
+
+            final Object minDiffDay = minRecord.items.get("Dy");
 
 //            KataRecord minRecord = kataRecords.stream()
 //                    .min(Comparator.comparing(KataRecord::getDiff))
 //                    .orElseThrow(NullPointerException::new);
 
- //           System.out.println(minRecord.getDisplayName());
+                            //           System.out.println(minRecord.getDisplayName());
 
 //            String result = parser.getRecord(filename);
         } catch (Exception e) {
