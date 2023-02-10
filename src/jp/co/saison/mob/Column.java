@@ -3,6 +3,7 @@ package jp.co.saison.mob;
 public class Column {
 
     private final String name;
+
     private final int startPosition;
 
     private final int length;
@@ -14,6 +15,10 @@ public class Column {
         this.startPosition = startPosition;
         this.length = length;
         this.type = type;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getStartPosition() {

@@ -14,12 +14,12 @@ public class WeatherFormat {
     // ヘッダーの行数
     private final int headerCount = 2;
     // レコード
-    private final Record record;
+    private final Format format;
 
     public WeatherFormat() {
         Set<Column> columns = new HashSet<>();
         columns.add(new Column("Dy", 0, 4, ColumnType.Number));
-        this.record = new Record(columns);
+        this.format = new Format(columns);
     }
     // フッター
 

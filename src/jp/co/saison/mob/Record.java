@@ -1,15 +1,13 @@
 package jp.co.saison.mob;
 
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Record {
-    private final Set<Column> columnSet;
 
-    public Record(Set<Column> columnSet) {
-        this.columnSet = columnSet;
-    }
+    Map<String, Object> items;
 
-    public Set<Column> getColumnSet() {
-        return columnSet;
+    public Record() {
+        this.items = new HashMap<>();
     }
 }
