@@ -4,17 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Kata04MainNew {
 
     public static void main(String[] args) {
         String filename = args[0];
-        String parserType = args[1];
         final File file = new File(filename);
         try (final FileReader fileReader = new FileReader(file);
              final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
@@ -37,7 +32,11 @@ public class Kata04MainNew {
             String text;
             List<Record> records = new ArrayList<>();
             while ((text = bufferedReader.readLine()) != null) {
-                records.add(parser.parse(text));
+                try {
+                    records.add(parser.parse(text));
+                } catch (NumberFormatException e) {
+                    continue;
+                }
             }
 
             final Record minRecord = records.stream()
@@ -45,12 +44,13 @@ public class Kata04MainNew {
                     .orElseThrow(NullPointerException::new);
 
             final Object minDiffDay = minRecord.items.get("Dy");
+            System.out.println(minDiffDay);
 
 //            KataRecord minRecord = kataRecords.stream()
 //                    .min(Comparator.comparing(KataRecord::getDiff))
 //                    .orElseThrow(NullPointerException::new);
 
-                            //           System.out.println(minRecord.getDisplayName());
+            //           System.out.println(minRecord.getDisplayName());
 
 //            String result = parser.getRecord(filename);
         } catch (Exception e) {
