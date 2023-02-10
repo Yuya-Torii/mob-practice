@@ -25,16 +25,18 @@ public class Kata04MainNew {
 			columnSet.add(dy);
 	        final Column mxt = new Column("MxT", 4, 6, ColumnType.Number);
 			columnSet.add(mxt);
-	        final Column mnt = new Column("MnT", 0, 4, ColumnType.Number);
+	        final Column mnt = new Column("MnT", 10, 6, ColumnType.Number);
+            columnSet.add(mnt);
 
             // Formatをつくる
+            final Format format = new Format(columnSet);
+
             // Parserをつくる
-            KataParser kataParser = KataParserFactory.createParser(parserType);
-//            Parser parser = new Parser();
+            final Parser parser = new Parser(format);
+
+
             while ((text = bufferedReader.readLine()) != null) {
-                if (kataParser.setRecord(text) != null) {
-                    kataRecords.add(kataParser.setRecord(text));
-                }
+                final Record record = parser.parse(text);
             }
 
             KataRecord minRecord = kataRecords.stream()
