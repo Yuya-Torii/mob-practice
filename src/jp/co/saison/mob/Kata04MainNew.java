@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Kata04MainNew {
 
@@ -18,12 +20,17 @@ public class Kata04MainNew {
             ArrayList<KataRecord> kataRecords = new ArrayList<>();
 
             // ColumnのSetをつくる
+	        Set<Column> columnSet = new HashSet<>();
+	        final Column dy = new Column("Dy", 0, 4, ColumnType.Number);
+			columnSet.add(dy);
+	        final Column mxt = new Column("MxT", 4, 6, ColumnType.Number);
+			columnSet.add(mxt);
+	        final Column mnt = new Column("MnT", 0, 4, ColumnType.Number);
+
             // Formatをつくる
             // Parserをつくる
             KataParser kataParser = KataParserFactory.createParser(parserType);
 //            Parser parser = new Parser();
-//            final Column dy = new Column();
-
             while ((text = bufferedReader.readLine()) != null) {
                 if (kataParser.setRecord(text) != null) {
                     kataRecords.add(kataParser.setRecord(text));
