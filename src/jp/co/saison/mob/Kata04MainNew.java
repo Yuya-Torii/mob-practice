@@ -3,6 +3,7 @@ package jp.co.saison.mob;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -39,7 +40,7 @@ public class Kata04MainNew {
                 records.add(parser.parse(text));
             }
 
-//			records.stream().min(Comparator.comparing(r->r.items.get("")))
+			// records.stream().min(Comparator.comparing(r -> ((BigDecimal)r.items.get("MxT")).subtract(r.items.get("MnT")))
 
 //            KataRecord minRecord = kataRecords.stream()
 //                    .min(Comparator.comparing(KataRecord::getDiff))
