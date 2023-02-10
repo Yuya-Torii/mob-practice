@@ -17,8 +17,6 @@ public class Kata04MainNew {
         final File file = new File(filename);
         try (final FileReader fileReader = new FileReader(file);
              final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            String text;
-            List<Record> records = new ArrayList<>();
 
             // ColumnのSetをつくる
             Set<Column> columnSet = new HashSet<>();
@@ -35,9 +33,13 @@ public class Kata04MainNew {
             // Parserをつくる
             final Parser parser = new Parser(format);
 
+            String text;
+            List<Record> records = new ArrayList<>();
             while ((text = bufferedReader.readLine()) != null) {
                 records.add(parser.parse(text));
             }
+
+//			records.stream().min(Comparator.comparing(r->r.items.get("")))
 
 //            KataRecord minRecord = kataRecords.stream()
 //                    .min(Comparator.comparing(KataRecord::getDiff))
