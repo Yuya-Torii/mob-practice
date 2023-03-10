@@ -10,11 +10,12 @@ public class Kata04MainNew {
 
     public static void main(String[] args) {
         String filename = args[0];
+        String type = args[1];
         final File file = new File(filename);
         try (final FileReader fileReader = new FileReader(file);
              final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
-            final int headerCount = 2;
+
 
             // ColumnのSetをつくる
             Set<Column> columnSet = new HashSet<>();
