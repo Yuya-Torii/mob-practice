@@ -14,6 +14,8 @@ public class Kata04MainNew {
         try (final FileReader fileReader = new FileReader(file);
              final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
+            final int headerCount = 2;
+
             // ColumnのSetをつくる
             Set<Column> columnSet = new HashSet<>();
             final Column dy = new Column("Dy", 0, 4, ColumnType.Number);
