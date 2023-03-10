@@ -38,7 +38,11 @@ public class Kata04MainNew {
             List<Record> records = new ArrayList<>();
             while ((text = bufferedReader.readLine()) != null) {
                 try {
-                    records.add(parser.parse(text));
+                    final Record record = parser.parse(text);
+                    if (record == null) {
+                        continue;
+                    }
+                    records.add(record);
                 } catch (NumberFormatException e) {
                     continue;
                 }
