@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class WeatherStrategy implements Strategy{
+public class WeatherStrategy implements Strategy {
     @Override
     public Set<Column> makeColumnSet() {
         // ColumnのSetをつくる
@@ -26,9 +26,7 @@ public class WeatherStrategy implements Strategy{
         final Record minRecord = records.stream()
                 .min(Comparator.comparing(r -> ((BigDecimal) r.items.get("MxT")).subtract(((BigDecimal) r.items.get("MnT")))))
                 .orElseThrow(NullPointerException::new);
-
         final Object minDiffDay = minRecord.items.get("Dy");
         System.out.println(minDiffDay);
-
     }
 }
