@@ -5,6 +5,6 @@ import java.util.Set;
 
 public interface Strategy {
     Set<Column> makeColumnSet();
-    Object handle(List<Record> records);
+    void handle(List<Record> records);
 
 }
