@@ -18,12 +18,14 @@ public class Parser {
      * @return
      */
     Record parse(String text) {
-
         Set<Column> columnSet = format.getColumnSet();
 
         final Record record = new Record();
         for (Column column : columnSet) {
             int endPosition = column.getStartPosition() + column.getLength();
+            if (text.length() <= endPosition) {
+                return null;
+            }
             final String rawText = text.substring(column.getStartPosition(), endPosition);
 			ColumnType columnType = column.getType();
             // TODO ごみ処理？
